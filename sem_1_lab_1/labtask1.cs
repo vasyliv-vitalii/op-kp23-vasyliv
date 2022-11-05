@@ -13,9 +13,18 @@ class Programm
         double a = 1.35;
         double b = -6.25;
         double dx = 0.25;
-        double xk = 10.3;
-        double y = 0, x = 0;
-        Console.WriteLine("x =" + x + "   " + "y =" + y);
+        Console.WriteLine("Enter x0");
+        double x0 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Enter xk");
+        double xk = Convert.ToDouble(Console.ReadLine());
+        double y, x;
+        for (double i = x0; i < xk; i += dx)
+        {
+            x = i;
+            y = a * Math.Pow(x, 3) + Math.Pow(Math.Cos(Math.Pow(x, 3) - b), 2);
+
+            Console.WriteLine("x = " + x + "   " + "y = " + y);
+        }
     }
 
 
