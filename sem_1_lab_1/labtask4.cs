@@ -1,3 +1,5 @@
+using System;
+
 class Programm
 {
     static void Main(string[] args)
@@ -18,20 +20,42 @@ class Programm
         double x;
         double a;
         double sin = 0;
-        int sign =0;
+        Console.WriteLine("Enter the number x");
+        bool isxcorrect = double.TryParse(Console.ReadLine(), out x);
+        Console.WriteLine("Enter the number a");
+        bool isacorrect = double.TryParse(Console.ReadLine(), out a);
+        if (!isxcorrect)
+        {
+            Console.WriteLine("Enter correct x");
+        }
+        if (!isacorrect)
+        {
+            Console.WriteLine("Enter correct a");
+        }
+        int sign = Math.Floor(x / Math.PI) % 2 == 0 ? 1 : -1;
+        x %= Math.PI;
+        for (int i = 0; i <= a; i++)
+        {
+            sin += Power(-1, i) * (Power(x, 2 * i + 1) / Factorial(2 * i + 1));
+        }
         Console.WriteLine(sin * sign);
-
-
     }
     static double Power(double numb, double n)
     {
         double res = 1;
+        for (int i = 0; i < n; i++)
+        {
+            res *= numb;
+        }
         return res;
     }
     static double Factorial(double numb)
     {
         double factorial = 1;
+        for (double i = 1; i <= numb; i++)
+        {
+            factorial = factorial * i;
+        }
         return factorial;
     }
-
 }
