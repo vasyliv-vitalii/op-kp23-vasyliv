@@ -18,7 +18,7 @@ class Programm
         Console.WriteLine("Enter xk");
         double xk = Convert.ToDouble(Console.ReadLine());
         double y, x;
-        for (double i = x0; i < xk; i += dx)
+        for (double i = x0; i <= xk; i += dx)
         {
             x = i;
             y = a * Math.Pow(x, 3) + Math.Pow(Math.Cos(Math.Pow(x, 3) - b), 2);
