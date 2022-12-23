@@ -1,30 +1,153 @@
+using System;
 class Percolation
 {
+    static void Main(String[] args)
+    {
+        while (true)
+        {
 
-    // creates n-by-n grid, with all sites initially blocked
-    static void init(int n)
+            Console.WriteLine("enter the n");
+            int n = Convert.ToInt32(Console.ReadLine());
+            int[,] matrix = init(n);
+            print(matrix);
+            Console.ReadLine();
+            Console.Clear();
+            matrix = Result(matrix);
+            print(matrix);
+            if (percolates(matrix) == true)
+            {
+                Console.WriteLine("it is percolation");
+            }
+            else
+            {
+                Console.WriteLine("it is not percolation");
+            }
+            Console.WriteLine("numbers of open sites: " + numberOfOpenSites(matrix));
+            Console.ReadLine();
+            Console.Clear();
+        }
 
-    // opens the site (row, col) if it is not open already
-    static void open(int row, int col)
+    }
+    static int[,] init(int n)
+    {
+        Random rnd = new Random();
+        int[,] matrix = new int[n, n];
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                int x = rnd.Next(2);
+                if (x == 0)
+                {
+                    matrix[i, j] = 2;
+                }
+                else if (x == 1 && i == 0)
+                {
+                    matrix[i, j] = 0;
+                }
+                else if (x == 1)
+                {
+                    matrix[i, j] = 1;
+                }
+            }
+        }
+        return matrix;
+    }
+    static int[,] Open(int row, int col, int[,] array)
+    {
+        int a = 2, b = 2, c = 2, d = 2;
+        if (row != 0) a = array[row - 1, col];
+        if (col != 0) b = array[row, col - 1];
+        if (row < array.GetLength(0) - 1) c = array[row + 1, col];
+        if (col < array.GetLength(1) - 1) d = array[row, col + 1];
+        if (array[row, col] == 1 && (a == 0 || b == 0 || c == 0 || d == 0))
+        {
+            array[row, col] = 0;
+            return array;
+        }
+        return array;
+    }
+    static bool isOpen(int row, int col, int[,] array)
+    {
+        if (array[row, col] == 2) return false;
+        return true;
+    }
+    static bool isFull(int row, int col, int[,] array)
+    {
+        if (array[row, col] == 1) return false;
+        return true;
+    }
+    static int numberOfOpenSites(int[,] array)
+    {
+        int count = 0;
+        for (int i = 0; i < array.GetLength(0); i++)
+        {
+            for (int j = 0; j < array.GetLength(1); j++)
+            {
+                if (array[i, j] == 0 || array[i, j] == 1)
+                {
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
+    static bool percolates(int[,] array)
+    {
+        for (int i = 0; i < array.GetLength(0); i++)
+        {
+            if (array[array.GetLength(1) - 1, i] == 0)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+    static void print(int[,] matrix)
+    {
+        for (int i = 0; i < matrix.GetLength(0); i++)
+        {
+            for (int j = 0; j < matrix.GetLength(1); j++)
+            {
+                if (matrix[i, j] == 1)
+                {
+                    Console.BackgroundColor = ConsoleColor.White;
+                    Console.Write("  ");
+                    Console.BackgroundColor = ConsoleColor.Black;
+                }
+                else if (matrix[i, j] == 2)
+                {
+                    Console.BackgroundColor = ConsoleColor.Red;
+                    Console.Write("  ");
+                    Console.BackgroundColor = ConsoleColor.Black;
+                }
+                else if (matrix[i, j] == 0)
+                {
+                    Console.BackgroundColor = ConsoleColor.Blue;
+                    Console.Write("  ");
+                    Console.BackgroundColor = ConsoleColor.Black;
+                }
 
-    // is the site (row, col) open?
-    static boolean isOpen(int row, int col)
-
-    // is the site (row, col) full?
-    static boolean isFull(int row, int col)
-
-    // returns the number of open sites
-    static int numberOfOpenSites()
-
-    // does the system percolate?
-    static boolean percolates()
-
-    // prints the matrix on the screen
-    // The method should display different types of sites (open, blocked, full)
-    static void print()
-
-    // test client (optional)
-    static static void Main(String[] args)
+            }
+            Console.WriteLine();
+        }
+    }
+    static int[,] Result(int[,] matrix)
+    {
+        int x = 0;
+        while (x < 10)
+        {
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < matrix.GetLength(1); j++)
+                {
+                    matrix = Open(i, j, matrix);
+                }
+            }
+            x++;
+        }
+        return matrix;
+    }
     static void testcase()
     {
         int[,] testArray1 = { { 0, 2, 2, 2 }, { 1, 1, 2, 1 }, { 1, 1, 1, 2 }, { 1, 1, 2, 2 } };
@@ -71,5 +194,4 @@ class Percolation
         }
     }
 }
-
 
