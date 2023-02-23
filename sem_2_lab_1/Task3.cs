@@ -1,5 +1,9 @@
 class Class
 {
+    /*Test  test scenarios
+     input:Road, ride, air ,Ambulance, track, Tell, Fire, Check, Mouse, trash, Crash, car, tiger, Our, check.
+     output:air, Ambulance, car, Check, check, Crash, Fire, Mouse, Our, ride, Road, Tell, tiger, track, trash.
+    */
     string path1 = "D:\\123232323\\Lab3Task3\\Lab3Task3\\TextFile1.txt";
     string path2 = "D:\\123232323\\Lab3Task3\\Lab3Task3\\TextFile2.txt";
     StreamReader sr = new StreamReader(path1);
