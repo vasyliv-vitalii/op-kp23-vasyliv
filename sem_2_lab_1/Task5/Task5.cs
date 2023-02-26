@@ -55,7 +55,7 @@ class MyClass
     (relaxation, 1)
     (and, 5)
     (tranquility, 1)
-    (the, 7)
+    w(the, 7)
     (sound, 1)
     (of, 4)
     (the, 7)
@@ -82,23 +82,71 @@ class MyClass
     {
         string path = @"D:\kpi23\op-kp23-vasyliv\sem_2_lab_1\Task5\File1.txt";
         StreamReader sr = new StreamReader(path);
+        string text = sr.ReadToEnd();
+        Console.WriteLine(text);
+        sr.Close();
+
+        int length = LengthOfArray(text);
+        string[] worsd = Splits(text, length);
+        foreach (var item in worsd)
+        {
+            if (item != null)
+            {
+                Console.WriteLine(HowMuchTime(ToLowers(item), worsd));
+            }
+        }
+
     }
 
     static (string, int) HowMuchTime(string word, string[] arr)
     {
         string name = "";
         int result = 0;
+        for (int i = 0; i < arr.Length; i++)
+        {
+            if (word == ToLowers(arr[i]))
+            {
+                name = arr[i];
+                result++;
+            }
+        }
+
         return (name, result);
     }
     static int LengthOfArray(string text)
     {
+
         int length = 0;
         string word = "";
+        for (int i = 0; i < text.Length; i++)
+        {
+            if ((text[i] >= 65 && text[i] <= 90) || (text[i] >= 97 && text[i] <= 122) || text[i] == 39 || text[i] == 45)
+            {
+                word += text[i];
+            }
+            else if (word != "")
+            {
+                length++;
+                word = "";
+            }
+        }
         return length;
     }
     static string ToLowers(string s)
     {
         string answer = "";
+        for (int i = 0; i < s.Length; i++)
+        {
+            if (s[i] < 90 && s[i] > 64)
+            {
+                char step = Convert.ToChar(s[i] + 32);
+                answer += step.ToString();
+            }
+            else
+            {
+                answer += s[i].ToString();
+            }
+        }
         return answer;
     }
 
@@ -106,6 +154,22 @@ class MyClass
     {
         string[] answer = new string[length];
         string word = "";
+        for (int i = 0, j = 0; i < text.Length; i++)
+        {
+            if ((text[i] >= 65 && text[i] <= 90) || (text[i] >= 97 && text[i] <= 122) || text[i] == 39 || text[i] == 45)
+            {
+                word += text[i];
+            }
+            else if (word != "")
+            {
+                answer[j] = word;
+                word = "";
+                j++;
+            }
+
+        }
+
+
         return answer;
     }
 }
