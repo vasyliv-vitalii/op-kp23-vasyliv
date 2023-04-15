@@ -10,9 +10,11 @@ namespace lab2task2._2
     {
         public override void PreaparingToMove()
         {
+            Console.WriteLine("Submarine is preaparing to move");
         }
         public override void Move()
         {
+            Console.WriteLine("Sibmarine is moving");
         }
     }
 }

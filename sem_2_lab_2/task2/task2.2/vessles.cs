@@ -10,10 +10,12 @@ namespace lab2task2._2
     {
         public virtual void PreaparingToMove()
         {
+            Console.WriteLine("vessle is preaparing to moving");
         }
 
         public virtual void Move()
         {
+            Console.WriteLine("vessle is  moving");
         }
     }
 }
