@@ -9,10 +9,12 @@ namespace lab2task2._3
     {
         public void PrepareToMove()
         {
+            Console.WriteLine("Sailing vessle is preaparing to move");
         }
 
         public void Move()
         {
+            Console.WriteLine("Sailing vessle is moving");
         }
     }
 }

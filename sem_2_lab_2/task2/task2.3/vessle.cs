@@ -10,9 +10,11 @@ namespace lab2task2._3
     {
         void PrepareToMove()
         {
+            Console.WriteLine("Vessle is preapering to move");
         }
         void Move()
         {
+            Console.WriteLine("Vessle is moving");
         }
     }
 }

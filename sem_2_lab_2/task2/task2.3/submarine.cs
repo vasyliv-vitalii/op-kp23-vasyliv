@@ -10,9 +10,11 @@ namespace lab2task2._3
     {
         public void PrepareToMove()
         {
+            Console.WriteLine("Submarine is preaparing to move");
         }
         public void Move()
         {
+            Console.WriteLine("Submarine is moving");
         }
     }
 }
