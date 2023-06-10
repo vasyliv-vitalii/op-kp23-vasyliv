@@ -124,7 +124,7 @@ public class Deque<Item>
 
         public Item MoveNext()
         {
-            if (left > right) throw new Exception("Daun blyat' nema kudy");
+            if (left > right) throw new Exception("error");
             counter--;
             return current[++left];
         }
