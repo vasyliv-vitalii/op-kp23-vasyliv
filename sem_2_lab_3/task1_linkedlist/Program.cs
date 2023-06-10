@@ -132,7 +132,7 @@ public class Deque<Item>
         
         public Item MoveNext()
         {
-            if (current == null) throw new Exception("Daun blyat' nema kudy");
+            if (current == null) throw new Exception("error");
             var tmp = current.item;
             current = current.right;
             return tmp;
