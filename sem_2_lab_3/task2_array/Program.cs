@@ -55,7 +55,7 @@ public class RandomizedQueue<Item>
     // remove and return a random item
     public Item Dequeue()
     {
-        if (IsEmpty()) throw new Exception("Idi nahuy daun");
+        if (IsEmpty()) throw new Exception("error");
         int idx = notEmptyCellsIdx[rnd.Next(0, notEmptyCellsIdx.Count)];
         notEmptyCellsIdx.Remove(idx);
         Item tmp = queue[idx];
