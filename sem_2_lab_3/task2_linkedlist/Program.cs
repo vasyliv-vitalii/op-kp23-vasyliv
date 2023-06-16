@@ -127,7 +127,7 @@ public class RandomizedQueue<Item>
         }
         public Item MoveNext()
         {
-            if (queue == null || count < 0) throw new Exception("Blyat' dima pizdec");
+            if (queue == null || count < 0) throw new Exception("error");
             pointer = queue;
             int idx = rnd.Next(0, count);
             count--;

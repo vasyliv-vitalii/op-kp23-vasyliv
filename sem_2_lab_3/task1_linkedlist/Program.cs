@@ -84,7 +84,7 @@ public class Deque<Item>
     {
         if (IsEmpty())
         {
-            throw new Exception("Ebat' ti daun, deque pustyi");
+            throw new Exception("error");
         }
         Item tmp = left.item;
         left = left.right;
@@ -99,7 +99,7 @@ public class Deque<Item>
     {
         if (IsEmpty())
         {
-            throw new Exception("Ebat' ti daun, deque pustyi");
+            throw new Exception("error");
         }
         Item tmp = right.item;
         right = right.left;
@@ -132,7 +132,7 @@ public class Deque<Item>
         
         public Item MoveNext()
         {
-            if (current == null) throw new Exception("Daun blyat' nema kudy");
+            if (current == null) throw new Exception("error");
             var tmp = current.item;
             current = current.right;
             return tmp;
