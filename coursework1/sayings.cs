@@ -23,6 +23,10 @@ namespace cursova
         public string Topics { get => topics; }
         public string Keyword { get => keywords; }
         public List<sayings> ListOfSaying = new List<sayings>();
+
+        // поставити path до listofsaying.csv
+        string path = "";
+
         public sayings(string author, string saying, string source,string type ,string topics, string keywords)
         {
             this.author = author;
@@ -35,7 +39,6 @@ namespace cursova
 
         public override string[] LoadData( )
         {
-            string path = "D:\\123232323\\cursova\\cursova\\listofsaying.csv";
             var sr = new StreamReader(path);
             int lenght = 0;
             while (!sr.EndOfStream)
@@ -111,7 +114,6 @@ namespace cursova
         {
             List<string> list = new List<string>();
             list = LoadData().ToList();
-            string path = "D:\\123232323\\cursova\\cursova\\listofsaying.csv";
             string line = "";
             foreach (var item in array)
             {

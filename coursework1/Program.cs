@@ -1,5 +1,6 @@
 ﻿using cursova;
-
+using System;
+using System.Threading;
 class MyClass
 {
     static void Main(string[] args)

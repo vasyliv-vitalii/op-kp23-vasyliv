@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.IO;
 using System.Threading.Tasks;
 
 namespace cursova
 {
     abstract class abstractclass : Search
     {
+        string path = ""; 
         public virtual string[] SearchbyAuthor(string Author, string[] array)
         {
             List<string> list = new List<string>();
@@ -25,7 +27,6 @@ namespace cursova
         }
         public virtual string[]  LoadData()
         {
-            string path = "D:\\123232323\\cursova\\cursova\\phraseologicalunits.csv";
             var sr = new StreamReader(path);
             int lenght = 0;
             while (!sr.EndOfStream)
@@ -83,7 +84,6 @@ namespace cursova
         {
             List<string> list = new List<string>();
             list = LoadData().ToList();
-            string path = "D:\\123232323\\cursova\\cursova\\phraseologicalunits.csv";
             string line = "";
             foreach (var item in array)
             {

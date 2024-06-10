@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace cursova
 {
@@ -21,6 +22,10 @@ namespace cursova
         public string Topics { get => topics; }
         public string Keyword { get => keywords; }
         public List<proverb> ListOfSaying = new List<proverb>();
+
+        // поставити path до proverb.csv
+        string path = "";
+
         public proverb(string author, string proverb, string source, string type, string topics, string keywords)
         {
             this.author = author;
@@ -32,7 +37,6 @@ namespace cursova
         }
         public override string[] LoadData()
         {
-            string path = "D:\\123232323\\cursova\\cursova\\proverb.csv";
             var sr = new StreamReader(path);
             int lenght = 0;
             while (!sr.EndOfStream)
@@ -105,7 +109,6 @@ namespace cursova
         {
             List<string> list = new List<string>();
             list = LoadData().ToList();
-            string path = "D:\\123232323\\cursova\\cursova\\proverb.csv";
             string line = "";
             foreach (var item in array)
             {

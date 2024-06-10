@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace cursova
 {
@@ -14,6 +15,10 @@ namespace cursova
         private string keywords;
         private string aphorisms;
         private string type;
+
+        // поставити path до aphorism.csv
+        string path = "";
+
         public string Type { get => type; }
         public string Author { get => author; }
         public string Aphorisms { get => aphorisms; }
@@ -33,7 +38,6 @@ namespace cursova
 
         public override string[] LoadData()
         {
-            string path = "D:\\123232323\\cursova\\cursova\\aphorism.csv";
             var sr = new StreamReader(path);
             int lenght = 0;
             while (!sr.EndOfStream)
@@ -110,7 +114,7 @@ namespace cursova
         {
             List<string> list = new List<string>();
             list = LoadData().ToList();
-            string path = "D:\\123232323\\cursova\\cursova\\aphorism.csv";
+            string path = "D:\\pythonTasks\\cw\\op-kp23-vasyliv\\coursework1\\aphorism.csv";
             string line = "";
             foreach (var item in array)
             {

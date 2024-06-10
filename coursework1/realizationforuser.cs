@@ -4,15 +4,15 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.IO;
 namespace cursova
 {
     class realizationforuser
     {
+        string path = "";
         public List<User> ListOfUsers = new List<User>();
         public void Update()
         {
-            string path = "D:\\123232323\\cursova\\cursova\\users.csv";
             var sw = new StreamWriter(path);
             foreach (var item in ListOfUsers)
             {
@@ -22,7 +22,6 @@ namespace cursova
         }
         public void LoadData()
         {
-            string path = "D:\\123232323\\cursova\\cursova\\users.csv";
             var sr = new StreamReader(path);
             while (!sr.EndOfStream)
             {
@@ -51,7 +50,6 @@ namespace cursova
         }
         public void AddUser(User user)
         {
-            string path = "D:\\123232323\\cursova\\cursova\\users.csv";
             try
             {
                 var match = ListOfUsers.Single(b => String.Compare(b.Email, user.Email) == 0);
