@@ -1,0 +1,15 @@
+D:\pythonTasks\cw\op-kp23-vasyliv\coursework1\obj\Debug\net8.0\cursova.GeneratedMSBuildEditorConfig.editorconfig
+D:\pythonTasks\cw\op-kp23-vasyliv\coursework1\obj\Debug\net8.0\cursova.AssemblyInfoInputs.cache
+D:\pythonTasks\cw\op-kp23-vasyliv\coursework1\obj\Debug\net8.0\cursova.AssemblyInfo.cs
+D:\pythonTasks\cw\op-kp23-vasyliv\coursework1\obj\Debug\net8.0\cursova.csproj.CoreCompileInputs.cache
+D:\pythonTasks\cw\op-kp23-vasyliv\coursework1\obj\Debug\net8.0\cursova.sourcelink.json
+D:\pythonTasks\cw\op-kp23-vasyliv\coursework1\bin\Debug\net8.0\cursova.deps.json
+D:\pythonTasks\cw\op-kp23-vasyliv\coursework1\bin\Debug\net8.0\cursova.dll
+D:\pythonTasks\cw\op-kp23-vasyliv\coursework1\bin\Debug\net8.0\cursova.pdb
+D:\pythonTasks\cw\op-kp23-vasyliv\coursework1\obj\Debug\net8.0\cursova.dll
+D:\pythonTasks\cw\op-kp23-vasyliv\coursework1\obj\Debug\net8.0\refint\cursova.dll
+D:\pythonTasks\cw\op-kp23-vasyliv\coursework1\obj\Debug\net8.0\cursova.pdb
+D:\pythonTasks\cw\op-kp23-vasyliv\coursework1\obj\Debug\net8.0\ref\cursova.dll
+D:\pythonTasks\cw\op-kp23-vasyliv\coursework1\bin\Debug\net8.0\cursova.exe
+D:\pythonTasks\cw\op-kp23-vasyliv\coursework1\bin\Debug\net8.0\cursova.runtimeconfig.json
+D:\pythonTasks\cw\op-kp23-vasyliv\coursework1\obj\Debug\net8.0\cursova.genruntimeconfig.cache
